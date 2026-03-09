@@ -122,7 +122,7 @@
             <!-- Nose highlight -->
             <ellipse cx="198" cy="105" rx="3" ry="2" fill="rgba(255,255,255,0.28)"/>
 
-            <!-- Eye (group translated so blink scaleY works at center) -->
+            <!-- Left eye (viewer's left — dog's right eye, closer to us) -->
             <g transform="translate(152, 88)">
               <g class="dog-eye-svg">
                 <circle cx="0" cy="0" r="10" fill="#2a2a2a"/>
@@ -131,9 +131,22 @@
               </g>
             </g>
 
-            <!-- Expressive eyebrow -->
+            <!-- Right eye (viewer's right — dog's left eye, further away/smaller) -->
+            <g transform="translate(179, 84)">
+              <g class="dog-eye-svg">
+                <circle cx="0" cy="0" r="8" fill="#2a2a2a"/>
+                <circle cx="-2.5" cy="-2.5" r="2.2" fill="#ffffff"/>
+                <circle cx="3"   cy="-3" r="1.2" fill="rgba(255,255,255,0.55)"/>
+              </g>
+            </g>
+
+            <!-- Left eyebrow -->
             <path d="M141 76 Q152 70 163 76"
                   stroke="#c76a00" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+            <!-- Right eyebrow -->
+            <path d="M169 73 Q179 67 189 73"
+                  stroke="#c76a00" stroke-width="3" stroke-linecap="round" fill="none"/>
 
             <!-- Smile -->
             <path d="M182 122 Q190 129 198 122"
