@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Lato:wght@400;700&display=swap');
+/* Font loaded via <link> in HTML for performance (no render-blocking @import) */
 
 /* ============================================
    SHNOBLE'S NIBBLES — DESIGN SYSTEM
@@ -26,14 +26,21 @@
    ============================================ */
 *, *::before, *::after { box-sizing: border-box; }
 
-html, body { margin: 0; padding: 0; }
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Lato', sans-serif;
   color: var(--text-dark);
   background: var(--off-white);
   line-height: 1.68;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* prevent accidental horizontal scroll on mobile */
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -314,6 +321,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 .dog-tail-svg {
   transform-origin: 0 0;
   animation: wagTail 0.62s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Eye blink */
@@ -343,6 +351,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   color: var(--pink);
   opacity: 0;
   animation: pawWalk 10s linear infinite;
+  will-change: left, opacity;
 }
 
 .paw-print:nth-child(odd)  { bottom: 20px; }
@@ -377,6 +386,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   padding: 0.82rem 1.8rem;
   border-radius: var(--radius-sm);
   border: 2px solid transparent;
+  min-height: 44px; /* WCAG 2.5.5 touch target */
 }
 
 .btn.primary:hover,
@@ -396,6 +406,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   background: transparent;
   border: none;
   position: relative;
+  min-height: 44px; /* WCAG 2.5.5 touch target */
 }
 
 .btn.secondary::after {
@@ -431,6 +442,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   border: 2px solid transparent;
   font-family: 'Nunito', sans-serif;
   font-weight: 900;
+  min-height: 44px; /* WCAG 2.5.5 touch target */
 }
 
 .btn.primary-inv:hover,
@@ -459,6 +471,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   gap: 2.8rem;
   animation: scrollTrust 28s linear infinite;
   padding-right: 2.8rem;
+  will-change: transform;
 }
 
 .trust-bar:hover .trust-bar-inner { animation-play-state: paused; }
@@ -944,6 +957,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   box-shadow: 0 12px 36px rgba(0,0,0,0.22);
   position: relative;
   overflow: hidden;
+  will-change: transform;
 }
 
 /* Subtle sheen on pack */
@@ -1247,4 +1261,30 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   }
 
   .trust-badge { font-size: 0.85rem; }
+}
+
+/* Form inputs — 16px prevents iOS Safari auto-zoom on focus */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* 27. Accessibility — Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-headline, .hero-subtext, .hero-cta, .hero-image {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
