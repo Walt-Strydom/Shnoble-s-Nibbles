@@ -1,0 +1,96 @@
+# =========================================================
+# Shnoble's Nibbles — .htaccess
+# Apache configuration for shared cPanel hosting
+# =========================================================
+
+# ---------------------------------------------------------
+# HTTPS Redirect (force secure connection)
+# ---------------------------------------------------------
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ---------------------------------------------------------
+# WWW to non-WWW canonical redirect
+# ---------------------------------------------------------
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# ---------------------------------------------------------
+# Remove .html extension (friendly URLs)
+# ---------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# ---------------------------------------------------------
+# Custom 404 page
+# ---------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------
+# GZIP Compression
+# ---------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE application/xml
+</IfModule>
+
+# ---------------------------------------------------------
+# Browser Caching
+# ---------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # CSS and JS (1 year — use cache busting via query string when deploying)
+  ExpiresByType text/css               "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript        "access plus 1 year"
+
+  # Images
+  ExpiresByType image/jpeg             "access plus 6 months"
+  ExpiresByType image/png              "access plus 6 months"
+  ExpiresByType image/webp             "access plus 6 months"
+  ExpiresByType image/svg+xml         "access plus 6 months"
+  ExpiresByType image/gif              "access plus 6 months"
+  ExpiresByType image/ico              "access plus 1 year"
+  ExpiresByType image/x-icon          "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/woff              "access plus 1 year"
+  ExpiresByType font/woff2             "access plus 1 year"
+  ExpiresByType application/font-woff  "access plus 1 year"
+
+  # HTML (short cache — content may update)
+  ExpiresByType text/html              "access plus 1 hour"
+</IfModule>
+
+# ---------------------------------------------------------
+# Security Headers
+# ---------------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# ---------------------------------------------------------
+# Prevent directory listing
+# ---------------------------------------------------------
+Options -Indexes
+
+# ---------------------------------------------------------
+# Block access to sensitive files
+# ---------------------------------------------------------
+<FilesMatch "(\.htaccess|\.git|CLAUDE\.md)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
