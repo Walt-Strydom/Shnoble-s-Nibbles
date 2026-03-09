@@ -28,6 +28,16 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://shnoblesnibbles.co.za/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://shnoblesnibbles.co.za/contact.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
@@ -83,6 +93,15 @@
   </header>
 
   <main>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><span aria-current="page">Contact</span></li>
+        </ol>
+      </div>
+    </nav>
 
     <section class="section">
       <div class="container">
