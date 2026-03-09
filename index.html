@@ -3,37 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shnoble's Nibbles</title>
-  <meta name="description" content="Premium freeze-dried dog treats made with fresh, simple and natural, locally sourced ingredients." />
-  <link rel="canonical" href="https://shnoblesnibbles.co.za/index.html" />
-  <meta property="og:site_name" content="Shnoble's Nibbles" />
-  <meta property="og:title" content="Shnoble's Nibbles" />
-  <meta property="og:description" content="Premium freeze-dried dog treats made with real ingredients." />
-  <meta property="og:url" content="https://shnoblesnibbles.co.za/index.html" />
   <title>Shnoble's Nibbles | Premium Natural Dog Treats South Africa</title>
-  <meta name="description" content="Wholesome, natural dog treats baked with love in South Africa. No artificial additives. 100% dog-approved." />
-  <link rel="canonical" href="https://shnoblesnibbles.co.za/index.html" />
-  <link rel="alternate" hreflang="en-za" href="https://shnoblesnibbles.co.za/" />
+  <meta name="description" content="Wholesome freeze-dried dog treats made with love in South Africa. Just three clean ingredients: chicken liver, sweet potato and beef bone broth. No additives, no nonsense." />
+  <link rel="canonical" href="https://shnoblesnibbles.co.za/" />
+  <link rel="alternate" hreflang="en-za"   href="https://shnoblesnibbles.co.za/" />
   <link rel="alternate" hreflang="x-default" href="https://shnoblesnibbles.co.za/" />
-  <meta property="og:site_name" content="Shnoble's Nibbles" />
-  <meta property="og:title" content="Shnoble's Nibbles | Premium Natural Dog Treats South Africa" />
-  <meta property="og:description" content="Healthy, joyful dog treats made in South Africa." />
-  <meta property="og:url" content="https://shnoblesnibbles.co.za/index.html" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Shnoble's Nibbles" />
+  <meta property="og:title"       content="Shnoble's Nibbles | Premium Natural Dog Treats South Africa" />
+  <meta property="og:description" content="Wholesome, natural dog treats made with love in Randburg, Gauteng. No artificial additives. 100% dog-approved." />
+  <meta property="og:url"         content="https://shnoblesnibbles.co.za/" />
+  <meta name="twitter:card"       content="summary_large_image" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://shnoblesnibbles.co.za/#organization",
+    "name": "Shnoble's Nibbles",
+    "url": "https://shnoblesnibbles.co.za",
+    "description": "Premium natural freeze-dried dog treats made in South Africa.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Randburg", "addressRegion": "Gauteng", "addressCountry": "ZA" },
+    "telephone": "+27665580274",
+    "sameAs": [
+      "https://www.instagram.com/shnobles.nibbles",
+      "https://www.facebook.com/profile.php?id=61572263503396",
+      "https://www.threads.net/@shnobles.nibbles"
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="index.html"><span class="brand-dot" aria-hidden="true"></span>Shnoble's Nibbles</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
           <li><a class="active" href="index.html">Home</a></li>
-          <li><a href="products.html">Our Products</a></li>
-          <li><a href="ingredients.html">Our Process</a></li>
-          <li><a href="about.html">Our Story</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">Our Story</a></li>
           <li><a href="ingredients.html">Ingredients</a></li>
           <li><a href="dog-health.html">Dog Health</a></li>
           <li><a href="stockists.html">Stockists</a></li>
@@ -44,98 +59,393 @@
   </header>
 
   <main>
+
+    <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <p class="lead hero-subtext">It's That Simple</p>
-          <h1 class="hero-headline">Shnoble's Nibbles</h1>
-          <p class="lead hero-subtext">Premium dog treats with fresh, simple and natural, locally sourced ingredients.</p>
-          <div class="btn-row hero-cta">
-            <a class="btn primary" href="products.html">Shop Now</a>
-            <a class="btn secondary" href="about.html">Who are we?</a>
-          </div>
-          <h1 class="hero-headline">Healthy treats that make tails wag.</h1>
-          <p class="lead hero-subtext">Shnoble's Nibbles crafts joyful, wholesome dog snacks made with natural ingredients for South African pet families.</p>
+        <div class="hero-content">
+          <h1 class="hero-headline">Healthy treats<br/>that make tails wag.</h1>
+          <p class="lead hero-subtext">Shnoble's Nibbles crafts joyful, wholesome dog snacks — three simple ingredients, zero nasties, made right here in South Africa.</p>
           <div class="btn-row hero-cta">
             <a class="btn primary" href="products.html">Shop Treats</a>
-            <a class="btn secondary" href="stockists.html">Find a Stockist</a>
+            <a class="btn secondary" href="about.html">Our Story</a>
           </div>
-          <p class="paw-divider" aria-hidden="true">🐾 🐾 🐾</p>
         </div>
+
+        <!-- Animated SVG Dog -->
         <div class="hero-visual hero-image" aria-hidden="true">
-          <div class="dog-illustration">🐶<span class="dog-tail"></span></div>
+          <svg class="dog-svg" viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Happy cartoon dog with wagging tail">
+
+            <!-- TAIL — nested g trick: outer g places origin at tail base,
+                 inner .dog-tail-svg rotates around that point -->
+            <g transform="translate(58, 155)">
+              <g class="dog-tail-svg">
+                <path d="M0 0 Q-36 -26 -32 -62 Q-29 -84 -14 -88"
+                      stroke="#c76a00" stroke-width="16" stroke-linecap="round" fill="none"/>
+                <circle cx="-14" cy="-94" r="11" fill="#e68000"/>
+              </g>
+            </g>
+
+            <!-- Body -->
+            <ellipse cx="124" cy="176" rx="70" ry="52" fill="#e68000"/>
+
+            <!-- Back haunch (adds depth) -->
+            <ellipse cx="72" cy="160" rx="34" ry="28" fill="#d07518"/>
+
+            <!-- Neck -->
+            <ellipse cx="148" cy="134" rx="27" ry="20" fill="#e68000"/>
+
+            <!-- Head -->
+            <circle cx="160" cy="98" r="48" fill="#f0a020"/>
+
+            <!-- Floppy left ear -->
+            <path d="M124 70 C104 50 102 74 110 98 C115 113 130 110 135 90 Z" fill="#c76a00"/>
+
+            <!-- Right ear (peeking behind head) -->
+            <ellipse cx="191" cy="64" rx="14" ry="19" fill="#c76a00" transform="rotate(18 191 64)"/>
+
+            <!-- Muzzle / snout area -->
+            <ellipse cx="192" cy="113" rx="25" ry="18" fill="#f5c060"/>
+
+            <!-- Nose -->
+            <ellipse cx="201" cy="107" rx="9" ry="7" fill="#2a2a2a"/>
+            <!-- Nose highlight -->
+            <ellipse cx="198" cy="105" rx="3" ry="2" fill="rgba(255,255,255,0.28)"/>
+
+            <!-- Eye (group translated so blink scaleY works at center) -->
+            <g transform="translate(152, 88)">
+              <g class="dog-eye-svg">
+                <circle cx="0" cy="0" r="10" fill="#2a2a2a"/>
+                <circle cx="-3.5" cy="-3" r="3" fill="#ffffff"/>
+                <circle cx="4"   cy="-4" r="1.5" fill="rgba(255,255,255,0.55)"/>
+              </g>
+            </g>
+
+            <!-- Expressive eyebrow -->
+            <path d="M141 76 Q152 70 163 76"
+                  stroke="#c76a00" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+            <!-- Smile -->
+            <path d="M182 122 Q190 129 198 122"
+                  stroke="#c76a00" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+            <!-- Tongue -->
+            <ellipse cx="190" cy="133" rx="7" ry="9" fill="#e4babf"/>
+            <line x1="190" y1="122" x2="190" y2="133"
+                  stroke="#d4a0aa" stroke-width="1.5" stroke-linecap="round"/>
+
+            <!-- Front left paw -->
+            <ellipse cx="96" cy="224" rx="21" ry="13" fill="#c76a00"/>
+            <circle cx="88"  cy="220" r="4" fill="#b05e00" opacity="0.45"/>
+            <circle cx="97"  cy="218" r="4" fill="#b05e00" opacity="0.45"/>
+            <circle cx="106" cy="220" r="4" fill="#b05e00" opacity="0.45"/>
+
+            <!-- Front right paw -->
+            <ellipse cx="148" cy="228" rx="21" ry="13" fill="#c76a00"/>
+            <circle cx="140" cy="224" r="4" fill="#b05e00" opacity="0.45"/>
+            <circle cx="149" cy="222" r="4" fill="#b05e00" opacity="0.45"/>
+            <circle cx="158" cy="224" r="4" fill="#b05e00" opacity="0.45"/>
+
+          </svg>
+        </div>
+      </div>
+
+      <!-- Walking paw prints strip -->
+      <div class="paw-walk" aria-hidden="true">
+        <span class="paw-print">
+          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
+          </svg>
+        </span>
+        <span class="paw-print">
+          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
+          </svg>
+        </span>
+        <span class="paw-print">
+          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
+          </svg>
+        </span>
+        <span class="paw-print">
+          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
+          </svg>
+        </span>
+        <span class="paw-print">
+          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
+          </svg>
+        </span>
+      </div>
+    </section>
+
+    <!-- ===== TRUST BAR ===== -->
+    <div class="trust-bar" role="region" aria-label="Brand guarantees">
+      <!-- Inner strip is duplicated for seamless infinite scroll -->
+      <div class="trust-bar-inner" aria-hidden="true">
+        <!-- Set 1 -->
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-1" viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
+          </svg>
+          <span>100% Natural</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>No Artificial Additives</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span>Made with Love in SA</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span>Locally Sourced Ingredients</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span>Freeze-Dried Fresh</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+        <!-- Set 2 (duplicate for seamless scroll) -->
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-1" viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
+          </svg>
+          <span>100% Natural</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>No Artificial Additives</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span>Made with Love in SA</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span>Locally Sourced Ingredients</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+        <div class="trust-badge">
+          <svg class="trust-icon bounce-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span>Freeze-Dried Fresh</span>
+        </div>
+        <span class="trust-dot" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <!-- ===== WHO WE ARE ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 data-animate>Who we are</h2>
+        <p class="lead" data-animate>Shnoble's Nibbles makes premium dog treats with fresh, simple and natural, locally sourced ingredients. We handcraft all our treats using real meats and vegetables, without any unnecessary additives or preservatives.</p>
+        <p class="lead" data-animate>Our treats are freeze-dried — a gentle process that locks in natural flavour and nutrients without heat or preservatives. Just clean, wholesome goodness in every bag.</p>
+        <div class="btn-row" data-animate>
+          <a class="btn primary" href="products.html">See Our Products</a>
+          <a class="btn secondary" href="about.html">Read Our Story</a>
         </div>
       </div>
     </section>
 
+    <!-- ===== WHY SHNOBLE'S ===== -->
     <section class="section alt">
       <div class="container">
-        <h2 data-animate>Who are we?</h2>
-        <p class="lead" data-animate>"Shnoble's Nibbles makes premium dog treats with fresh, simple and natural, locally sourced ingredients. We handcraft all our treats using real meats and vegetables, without any unnecessary additives or preservatives. Our focus is on quality and wholesome goodness, offering your dog a healthy and delicious treat they'll love."</p>
-        <p class="lead" data-animate>"Our treats are freeze-dried, a process where the treats are first frozen and then placed in a vacuum chamber. This removes the moisture from the treats directly as ice turns into vapor, preserving their natural flavor and nutrients without the use of heat or preservatives."</p>
         <h2 data-animate>Why pups (and people) love us</h2>
+        <div class="section-paw-divider" data-animate aria-hidden="true">
+          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/></svg>
+          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/></svg>
+          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/></svg>
+        </div>
         <div class="grid cards">
-          <article class="card" data-animate>
+          <article class="card featured" data-animate data-animate-delay="1">
+            <div class="card-icon" aria-hidden="true">🌿</div>
             <h3>Natural Ingredients</h3>
-            <p>Carefully selected ingredients without unnecessary fillers.</p>
+            <p>Carefully selected ingredients without unnecessary fillers, artificial colours, or preservatives you can't pronounce.</p>
           </article>
-          <article class="card" data-animate>
+          <article class="card" data-animate data-animate-delay="2">
+            <div class="card-icon" aria-hidden="true">🇿🇦</div>
             <h3>Proudly South African</h3>
-            <p>Made locally for local dogs with recipes you can trust.</p>
+            <p>Made locally for local dogs with locally sourced ingredients. Supporting SA from bowl to bag.</p>
           </article>
-          <article class="card" data-animate>
+          <article class="card" data-animate data-animate-delay="3">
+            <div class="card-icon" aria-hidden="true">✨</div>
             <h3>Joy in Every Bite</h3>
-            <p>Designed for flavour, crunch, and happy zoomies.</p>
+            <p>Designed for flavour, crunch, and that full-speed zoomies reaction you live for as a dog parent.</p>
           </article>
         </div>
       </div>
     </section>
+
+    <!-- ===== STATS COUNTER ===== -->
+    <section class="section stats-section" aria-label="Brand highlights">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item" data-animate>
+            <span class="stat-number" data-target="500" data-suffix="+">0+</span>
+            <p class="stat-label">Happy Dogs Served</p>
+          </div>
+          <div class="stat-item" data-animate data-animate-delay="1">
+            <span class="stat-number" data-target="3" data-suffix="">0</span>
+            <p class="stat-label">Simple Ingredients</p>
+          </div>
+          <div class="stat-item" data-animate data-animate-delay="2">
+            <span class="stat-number" data-target="100" data-suffix="%">0%</span>
+            <p class="stat-label">Natural &amp; Honest</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section alt">
+      <div class="container">
+        <h2 data-animate>What dog parents say</h2>
+        <div class="grid testimonials">
+
+          <article class="testimonial-card" data-animate data-animate-delay="1">
+            <div class="star-row" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="testimonial-quote-mark" aria-hidden="true">"</span>
+            <p class="testimonial-text">Our Lab goes absolutely wild for these! The freeze-dried chicken liver is the best training reward we've found. No more crumbling biscuits everywhere.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">🐕</div>
+              <div>
+                <span class="testimonial-name">Sipho M.</span>
+                <span class="testimonial-dog">Owner of Buddy — Labrador, Johannesburg</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card" data-animate data-animate-delay="2">
+            <div class="star-row" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="testimonial-quote-mark" aria-hidden="true">"</span>
+            <p class="testimonial-text">Finally a treat brand with ingredients I can actually read! Milo is getting older and I'm careful about what he eats — Shnoble's is our go-to now.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">🐾</div>
+              <div>
+                <span class="testimonial-name">Claire van Dyk</span>
+                <span class="testimonial-dog">Owner of Milo — Jack Russell, Pretoria</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card" data-animate data-animate-delay="3">
+            <div class="star-row" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="testimonial-quote-mark" aria-hidden="true">"</span>
+            <p class="testimonial-text">Bella is tiny and picky but she devours these. Knowing they're locally made with natural ingredients gives me peace of mind. Love supporting this SA brand!</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">🐩</div>
+              <div>
+                <span class="testimonial-name">Thandi K.</span>
+                <span class="testimonial-dog">Owner of Bella — Maltese, Cape Town</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Your dog deserves the best.</h2>
+        <p>Try Shnoble's Nibbles today — handcrafted with love, right here in South Africa.</p>
+        <a class="btn primary-inv" href="https://wa.me/+27665580274?text=Hi%20Shnoble's%20Nibbles!%20I'd%20like%20to%20order%20some%20treats%20%F0%9F%90%BE" target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>Shnoble's Nibbles</h3>
-        <p>Randburg, Gauteng</p>
-        <p>+27 66 558 0274</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <p><a href="products.html">Our Products</a><br /><a href="about.html">Our Story</a><br /><a href="contact.html">Contact</a></p>
-      </div>
-      <div>
-        <h3>Social Media</h3>
-        <div class="socials">
-          <a href="https://wa.me/27665580274">WhatsApp</a>
-        <p>Premium natural dog treats made with love in South Africa.</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <p><a href="products.html">Products</a><br /><a href="contact.html">Contact</a></p>
-      </div>
-      <div>
-        <h3>Social linkies</h3>
-        <div class="socials">
-          <a href="https://wa.me/+27665580274">WhatsApp</a>
-          <a href="https://www.instagram.com/shnobles.nibbles?igsh=MWxuaGhhZmN3NzZnNQ==">Instagram</a>
-          <a href="https://www.facebook.com/profile.php?id=61572263503396">Facebook</a>
-          <a href="http://telegram.org/">Telegram</a>
-          <a href="http://m.me/563719236818845">Messenger</a>
-          <a href="http://m.me/563719236818845">Facebook Messenger</a>
-          <a href="https://www.threads.net/@shnobles.nibbles">Threads</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">
+            <span class="brand-dot" aria-hidden="true"></span>Shnoble's Nibbles
+          </div>
+          <p class="footer-tagline">Premium freeze-dried dog treats made with love in Randburg, Gauteng.</p>
+          <div class="footer-contact">
+            <p>Randburg, Gauteng, South Africa</p>
+            <p>+27 66 558 0274</p>
+          </div>
         </div>
+        <div>
+          <p class="footer-heading">Quick Links</p>
+          <ul class="footer-links">
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="ingredients.html">Ingredients</a></li>
+            <li><a href="dog-health.html">Dog Health</a></li>
+            <li><a href="stockists.html">Stockists</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Find Us</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/shnobles.nibbles?igsh=MWxuaGhhZmN3NzZnNQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61572263503396" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.threads.net/@shnobles.nibbles" target="_blank" rel="noopener noreferrer">Threads</a>
+            <a href="https://wa.me/+27665580274" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Shnoble's Nibbles. All rights reserved.</p>
+        <p>Made with love in Randburg, Gauteng</p>
       </div>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/27665580274" aria-label="Chat with us on WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.11 17.48c-.27-.14-1.58-.78-1.82-.87-.24-.09-.41-.14-.58.14-.17.27-.67.87-.82 1.05-.15.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.82-.15-.27-.02-.41.12-.55.12-.12.27-.31.41-.46.14-.15.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.46.07-.7.34-.24.27-.92.9-.92 2.2s.94 2.55 1.07 2.73c.14.18 1.84 2.81 4.46 3.94.62.27 1.11.43 1.49.55.63.2 1.2.17 1.66.11.51-.08 1.58-.65 1.8-1.29.22-.63.22-1.18.15-1.29-.06-.1-.24-.17-.51-.31z"/><path fill="currentColor" d="M16 3.2C9.04 3.2 3.4 8.84 3.4 15.8c0 2.45.7 4.79 2.02 6.81L3.1 28.8l6.36-2.27a12.53 12.53 0 0 0 6.54 1.83c6.96 0 12.6-5.64 12.6-12.6S22.96 3.2 16 3.2zm0 22.92c-2.01 0-3.97-.54-5.67-1.56l-.41-.24-3.77 1.35 1.37-3.68-.27-.43a10.28 10.28 0 1 1 8.75 4.56z"/></svg>
-  </a>
-  <a class="whatsapp-float" href="https://wa.me/+27665580274" aria-label="Chat with us on WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.11 17.48c-.27-.14-1.58-.78-1.82-.87-.24-.09-.41-.14-.58.14-.17.27-.67.87-.82 1.05-.15.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.82-.15-.27-.02-.41.12-.55.12-.12.27-.31.41-.46.14-.15.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.46.07-.7.34-.24.27-.92.9-.92 2.2s.94 2.55 1.07 2.73c.14.18 1.84 2.81 4.46 3.94.62.27 1.11.43 1.49.55.63.2 1.2.17 1.66.11.51-.08 1.58-.65 1.8-1.29.22-.63.22-1.18.15-1.29-.06-.1-.24-.17-.51-.31z"/><path fill="currentColor" d="M16 3.2C9.04 3.2 3.4 8.84 3.4 15.8c0 2.45.7 4.79 2.02 6.81L3.1 28.8l6.36-2.27a12.53 12.53 0 0 0 6.54 1.83c6.96 0 12.6-5.64 12.6-12.6S22.96 3.2 16 3.2zm0 22.92c-2.01 0-3.97-.54-5.67-1.56l-.41-.24-3.77 1.35 1.37-3.68-.27-.43a10.28 10.28 0 1 1 8.75 4.56z"/></svg>
-  </a>
-
-  <a class="whatsapp-float" href="https://wa.me/+27665580274" aria-label="Chat with us on WhatsApp">
+  <!-- WhatsApp Float -->
+  <a class="whatsapp-float"
+     href="https://wa.me/+27665580274?text=Hi%20Shnoble's%20Nibbles!%20I'd%20like%20to%20find%20out%20more%20about%20your%20treats%20%F0%9F%90%BE"
+     target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <span class="whatsapp-tooltip">Chat with us!</span>
     <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
       <path fill="currentColor" d="M19.11 17.48c-.27-.14-1.58-.78-1.82-.87-.24-.09-.41-.14-.58.14-.17.27-.67.87-.82 1.05-.15.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.82-.15-.27-.02-.41.12-.55.12-.12.27-.31.41-.46.14-.15.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.46.07-.7.34-.24.27-.92.9-.92 2.2s.94 2.55 1.07 2.73c.14.18 1.84 2.81 4.46 3.94.62.27 1.11.43 1.49.55.63.2 1.2.17 1.66.11.51-.08 1.58-.65 1.8-1.29.22-.63.22-1.18.15-1.29-.06-.1-.24-.17-.51-.31z"/>
       <path fill="currentColor" d="M16 3.2C9.04 3.2 3.4 8.84 3.4 15.8c0 2.45.7 4.79 2.02 6.81L3.1 28.8l6.36-2.27a12.53 12.53 0 0 0 6.54 1.83c6.96 0 12.6-5.64 12.6-12.6S22.96 3.2 16 3.2zm0 22.92c-2.01 0-3.97-.54-5.67-1.56l-.41-.24-3.77 1.35 1.37-3.68-.27-.43a10.28 10.28 0 1 1 8.75 4.56z"/>
