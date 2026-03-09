@@ -1,17 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Lato:wght@400;700&display=swap');
 
 :root {
-  --off-white: #f0ebe7;
-  --text-dark: #333333;
-  --pink: #e4babf;
-  --orange: #e68000;
-  --orange-dark: #c76a00;
-  --surface: #fbf8f5;
+  --primary: #FF6B35;
+  --primary-dark: #E55A27;
+  --secondary: #FFD166;
+  --accent: #06D6A0;
+  --accent-dark: #04A87C;
+  --earth: #8B5E3C;
+  --earth-light: #F5ECD7;
+  --dark: #1A1A2E;
+  --white: #FFFEF9;
+  --text-body: #3D3D3D;
+  --text-muted: #7A7A7A;
+
+  /* Backwards-compatible aliases */
+  --off-white: var(--white);
+  --text-dark: var(--dark);
+  --pink: var(--secondary);
+  --orange: var(--primary);
+  --orange-dark: var(--primary-dark);
+  --surface: var(--earth-light);
   --surface-2: #ffffff;
-  --muted: #656565;
+  --muted: var(--text-muted);
   --radius-lg: 24px;
   --radius-md: 16px;
-  --shadow-soft: 0 12px 28px rgba(51, 51, 51, 0.12);
+  --shadow-soft: 0 12px 28px rgba(26, 26, 46, 0.12);
 }
 
 * {
@@ -261,7 +274,8 @@ h2 {
 
 .site-footer {
   margin-top: 2rem;
-  background: #e7dfd9;
+  background: var(--earth);
+  color: var(--white);
   padding: 2.4rem 0;
 }
 
@@ -277,8 +291,19 @@ h2 {
   gap: 0.45rem;
 }
 
+.site-footer a {
+  color: var(--white);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--secondary);
+}
+
 .socials a {
-  background: var(--surface-2);
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   padding: 0.3rem 0.75rem;
   font-size: 0.93rem;
@@ -428,5 +453,4 @@ h2 {
   color: #fff;
   background: #20bd5c;
   transform: translateY(-2px);
-}
 }

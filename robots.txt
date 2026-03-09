@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
-Disallow: /assets/
+Allow: /assets/
+Disallow:
 Sitemap: https://shnoblesnibbles.co.za/sitemap.xml
