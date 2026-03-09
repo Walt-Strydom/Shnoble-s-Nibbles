@@ -45,17 +45,10 @@ Think: a sunny dog park on a Saturday morning — tail-wagging energy, bright co
 ### 3.2 Colour Palette
 ```css
 :root {
-  --primary:      #FF6B35;  /* Warm tangerine — energetic, appetising */
-  --primary-dark: #E55A27;  /* Hover/active states */
-  --secondary:    #FFD166;  /* Sunny yellow — joy, warmth */
-  --accent:       #06D6A0;  /* Fresh mint — health, natural */
-  --accent-dark:  #04A87C;
-  --earth:        #8B5E3C;  /* Warm brown — baked, wholesome */
-  --earth-light:  #F5ECD7;  /* Cream — background warmth */
-  --dark:         #1A1A2E;  /* Deep navy — headlines, contrast */
-  --white:        #FFFEF9;  /* Off-white — warmer than pure white */
-  --text-body:    #3D3D3D;
-  --text-muted:   #7A7A7A;
+  - #f0ebe7; <-- main off white color 
+  - #333333; <--- i dont use full black for text but a dark grey 
+  - #e4babf; <---- Pink here 
+  - #e68000; <---- Orange
 }
 ```
 
