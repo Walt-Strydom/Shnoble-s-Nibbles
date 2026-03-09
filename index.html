@@ -28,17 +28,64 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://shnoblesnibbles.co.za/#organization",
-    "name": "Shnoble's Nibbles",
-    "url": "https://shnoblesnibbles.co.za",
-    "description": "Premium natural freeze-dried dog treats made in South Africa.",
-    "address": { "@type": "PostalAddress", "addressLocality": "Randburg", "addressRegion": "Gauteng", "addressCountry": "ZA" },
-    "telephone": "+27665580274",
-    "sameAs": [
-      "https://www.instagram.com/shnobles.nibbles",
-      "https://www.facebook.com/profile.php?id=61572263503396",
-      "https://www.threads.net/@shnobles.nibbles"
+    "@graph": [
+      {
+        "@type": ["Organization", "LocalBusiness"],
+        "@id": "https://shnoblesnibbles.co.za/#organization",
+        "name": "Shnoble's Nibbles",
+        "url": "https://shnoblesnibbles.co.za",
+        "description": "Premium natural freeze-dried dog treats made in South Africa.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Randburg",
+          "addressRegion": "Gauteng",
+          "addressCountry": "ZA"
+        },
+        "telephone": "+27665580274",
+        "priceRange": "R",
+        "sameAs": [
+          "https://www.instagram.com/shnobles.nibbles",
+          "https://www.facebook.com/profile.php?id=61572263503396",
+          "https://www.threads.net/@shnobles.nibbles"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://shnoblesnibbles.co.za/#website",
+        "url": "https://shnoblesnibbles.co.za",
+        "name": "Shnoble's Nibbles",
+        "publisher": { "@id": "https://shnoblesnibbles.co.za/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://shnoblesnibbles.co.za/products.html?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Shnoble's Nibbles Freeze-Dried Dog Treats",
+        "description": "Premium freeze-dried dog treats made from cooked chicken liver, sweet potato, and bone beef broth. No artificial additives, preservatives, or fillers. Made in Randburg, South Africa.",
+        "image": "https://shnoblesnibbles.co.za/assets/og/og-products.jpg",
+        "url": "https://shnoblesnibbles.co.za/products.html",
+        "brand": { "@type": "Brand", "name": "Shnoble's Nibbles" },
+        "manufacturer": { "@id": "https://shnoblesnibbles.co.za/#organization" },
+        "category": "Dog Treats",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "ZAR",
+          "availability": "https://schema.org/InStock",
+          "seller": { "@id": "https://shnoblesnibbles.co.za/#organization" }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "reviewCount": "12"
+        }
+      }
     ]
   }
   </script>
