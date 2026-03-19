@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Shnoble the Bichon Frise mascot">
+
+  <!-- Dark background -->
+  <rect width="400" height="400" fill="#111111"/>
+
+  <!-- ── Outer mane / side fluff ── -->
+  <ellipse cx="310" cy="228" rx="88" ry="100" fill="#e8e8e8"/>
+  <ellipse cx="90"  cy="228" rx="88" ry="100" fill="#e8e8e8"/>
+
+  <!-- ── Top poof ── -->
+  <ellipse cx="200" cy="88"  rx="108" ry="90"  fill="#e0e0e0"/>
+  <ellipse cx="295" cy="108" rx="80"  ry="72"  fill="#e4e4e4"/>
+  <ellipse cx="105" cy="108" rx="80"  ry="72"  fill="#e4e4e4"/>
+
+  <!-- ── Top curl highlights ── -->
+  <ellipse cx="200" cy="72"  rx="70"  ry="55"  fill="#f0f0f0"/>
+  <ellipse cx="278" cy="90"  rx="55"  ry="50"  fill="#eeeeee"/>
+  <ellipse cx="122" cy="90"  rx="55"  ry="50"  fill="#eeeeee"/>
+
+  <!-- ── Main face mass ── -->
+  <ellipse cx="200" cy="228" rx="148" ry="138" fill="#f4f4f4"/>
+
+  <!-- ── Grey depth / shadow shading ── -->
+  <ellipse cx="200" cy="175" rx="80"  ry="48"  fill="#d0d0d0" opacity="0.45"/>
+  <ellipse cx="295" cy="210" rx="50"  ry="70"  fill="#c8c8c8" opacity="0.35"/>
+  <ellipse cx="105" cy="210" rx="50"  ry="70"  fill="#c8c8c8" opacity="0.35"/>
+  <ellipse cx="200" cy="285" rx="100" ry="55"  fill="#dcdcdc" opacity="0.5"/>
+
+  <!-- ── Fur curl detail strokes ── -->
+  <path d="M138,136 C148,118 168,112 172,126" stroke="#b8b8b8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M248,130 C258,112 278,110 280,124" stroke="#b8b8b8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M162,96  C172,78  188,74  190,88"  stroke="#bbbbbb" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M228,94  C238,76  254,74  254,88"  stroke="#bbbbbb" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M105,155 C118,138 132,140 128,155" stroke="#bbbbbb" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M278,150 C292,133 308,135 302,150" stroke="#bbbbbb" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M310,195 C328,178 342,185 336,200" stroke="#bbbbbb" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <path d="M62,192  C78,175  90,180  86,195"  stroke="#bbbbbb" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+  <!-- ── Eyes ── -->
+  <!-- Left eye -->
+  <circle cx="166" cy="205" r="17"  fill="#1a1a1a"/>
+  <circle cx="166" cy="205" r="15"  fill="#0d0d0d"/>
+  <ellipse cx="159" cy="199" rx="6"  ry="5.5" fill="#ffffff"/>
+  <circle  cx="170" cy="197" r="2.5" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- Right eye -->
+  <circle cx="234" cy="205" r="17"  fill="#1a1a1a"/>
+  <circle cx="234" cy="205" r="15"  fill="#0d0d0d"/>
+  <ellipse cx="227" cy="199" rx="6"  ry="5.5" fill="#ffffff"/>
+  <circle  cx="238" cy="197" r="2.5" fill="rgba(255,255,255,0.55)"/>
+
+  <!-- ── Nose ── -->
+  <path d="M183,243 C188,230 212,230 217,243 C221,252 210,262 200,262 C190,262 179,252 183,243Z" fill="#111111"/>
+  <!-- Nose top bridge -->
+  <rect x="196" y="228" width="8" height="14" rx="4" fill="#111111"/>
+  <!-- Nose highlight -->
+  <ellipse cx="194" cy="239" rx="4.5" ry="3.5" fill="rgba(255,255,255,0.38)"/>
+
+  <!-- ── Muzzle fluff (chin area) ── -->
+  <ellipse cx="200" cy="280" rx="60"  ry="42"  fill="#ececec"/>
+  <ellipse cx="200" cy="268" rx="48"  ry="28"  fill="#f2f2f2"/>
+
+  <!-- ── Open mouth ── -->
+  <path d="M170,260 C174,278 182,288 200,292 C218,288 226,278 230,260 Z" fill="#222222"/>
+
+  <!-- ── Tongue ── -->
+  <path d="M176,268 C178,298 185,316 200,320 C215,316 222,298 224,268 Z" fill="#f0909e"/>
+  <!-- Tongue groove -->
+  <line x1="200" y1="268" x2="200" y2="318" stroke="#d06878" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Tongue highlight -->
+  <ellipse cx="194" cy="285" rx="7" ry="12" fill="rgba(255,255,255,0.22)"/>
+
+  <!-- ── Upper teeth hints ── -->
+  <path d="M174,263 L226,263" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- ── Subtle outer glow to lift off background ── -->
+  <ellipse cx="200" cy="215" rx="155" ry="145" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+</svg>

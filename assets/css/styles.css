@@ -292,6 +292,27 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 .hero-silhouette--left  img { animation-delay: 0.1s; }
 .hero-silhouette--right img { animation-delay: 0.35s; }
 
+/* Dog face portrait (circular, right of hero) */
+.hero-dog-portrait {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatIn 1s ease both;
+  animation-delay: 0.35s;
+}
+
+.hero-dog-portrait img {
+  width: clamp(160px, 18vw, 280px);
+  height: clamp(160px, 18vw, 280px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 4px solid var(--orange);
+  box-shadow:
+    0 0 0 8px rgba(230, 128, 0, 0.12),
+    0 16px 40px rgba(51, 51, 51, 0.18);
+}
+
 /* Hero text staggered entrance */
 .hero-subtext {
   animation: slideUpFade 0.7s ease both;
@@ -1128,28 +1149,23 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
     grid-template-rows: auto auto auto;
   }
 
-  /* On tablet/mobile: text first, silhouettes side by side below */
-  .hero-content { order: 1; }
-  .hero-silhouette--left  { order: 2; }
-  .hero-silhouette--right { order: 3; }
-
-  .hero-silhouette--left,
-  .hero-silhouette--right {
-    display: inline-flex;
-  }
-
-  /* Both silhouettes on one row below the text */
+  /* On tablet/mobile: text full-width top, silhouette + portrait below */
   .hero-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
   }
 
-  .hero-content {
-    grid-column: 1 / 3;
-  }
+  .hero-content    { order: 1; grid-column: 1 / 3; }
+  .hero-silhouette--left { order: 2; }
+  .hero-dog-portrait     { order: 3; }
 
   .hero-silhouette img {
-    width: clamp(80px, 22vw, 140px);
+    width: clamp(80px, 20vw, 130px);
+  }
+
+  .hero-dog-portrait img {
+    width: clamp(100px, 22vw, 150px);
+    height: clamp(100px, 22vw, 150px);
   }
 
   .footer-grid { grid-template-columns: 1fr; }
