@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 270" role="img" aria-label="Fluffy dog standing silhouette">
+  <g fill="#333333">
+    <!-- Main body -->
+    <ellipse cx="148" cy="162" rx="82" ry="55"/>
+    <!-- Rear haunch (right/back side) -->
+    <ellipse cx="215" cy="152" rx="42" ry="40"/>
+    <!-- Chest/shoulder transitioning to head -->
+    <ellipse cx="82" cy="132" rx="40" ry="34" transform="rotate(14 82 132)"/>
+    <!-- Neck -->
+    <ellipse cx="68" cy="108" rx="28" ry="23" transform="rotate(20 68 108)"/>
+    <!-- Head (left side, dog faces left) -->
+    <circle cx="72" cy="72" r="50"/>
+    <!-- Muzzle / snout -->
+    <ellipse cx="33" cy="86" rx="21" ry="14"/>
+    <!-- Droopy ear (back of head) -->
+    <path d="M108,58 C130,38 134,65 122,96 C116,112 100,110 96,88 C92,68 96,56 108,58Z"/>
+    <!-- Top knot / curly fur bumps -->
+    <ellipse cx="88" cy="31" rx="17" ry="21" transform="rotate(16 88 31)"/>
+    <ellipse cx="65" cy="25" rx="17" ry="21"/>
+    <ellipse cx="43" cy="33" rx="15" ry="19" transform="rotate(-14 43 33)"/>
+    <!-- Extra head fluff bump -->
+    <ellipse cx="54" cy="58" rx="13" ry="15" transform="rotate(-20 54 58)"/>
+    <!-- Body top fluffy bump -->
+    <ellipse cx="148" cy="112" rx="52" ry="26" transform="rotate(-4 148 112)"/>
+    <!-- Tail curving up (right/back side) -->
+    <path d="M216,150 C234,132 244,112 238,92 C232,74 220,72 226,87 C232,102 224,120 208,132 C202,138 200,149 210,152Z"/>
+    <!-- Tail tip curl -->
+    <circle cx="240" cy="90" r="13"/>
+    <!-- Back leg near (right) -->
+    <rect x="196" y="198" width="28" height="52" rx="13"/>
+    <!-- Back leg far (right) -->
+    <rect x="228" y="194" width="24" height="48" rx="11"/>
+    <!-- Front leg near (left) -->
+    <rect x="60" y="196" width="28" height="52" rx="13"/>
+    <!-- Front leg far (left) -->
+    <rect x="94" y="194" width="24" height="48" rx="11"/>
+    <!-- Paws back -->
+    <ellipse cx="210" cy="248" rx="19" ry="11"/>
+    <ellipse cx="240" cy="241" rx="16" ry="10"/>
+    <!-- Paws front -->
+    <ellipse cx="74" cy="246" rx="19" ry="11"/>
+    <ellipse cx="106" cy="242" rx="16" ry="10"/>
+    <!-- Belly connection -->
+    <ellipse cx="148" cy="206" rx="56" ry="18"/>
+  </g>
+</svg>

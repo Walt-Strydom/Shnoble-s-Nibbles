@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 285" role="img" aria-label="Fluffy dog sitting silhouette">
+  <g fill="#333333">
+    <!-- Main round body -->
+    <ellipse cx="130" cy="198" rx="96" ry="74"/>
+    <!-- Head (large, round, fluffy) -->
+    <circle cx="130" cy="96" r="76"/>
+    <!-- Top fur bumps — curly top knot -->
+    <ellipse cx="94" cy="28" rx="26" ry="29" transform="rotate(-18 94 28)"/>
+    <ellipse cx="130" cy="21" rx="24" ry="27"/>
+    <ellipse cx="166" cy="28" rx="26" ry="29" transform="rotate(18 166 28)"/>
+    <!-- Side fluff / ear left -->
+    <ellipse cx="47" cy="90" rx="27" ry="37" transform="rotate(-10 47 90)"/>
+    <!-- Side fluff / ear right -->
+    <ellipse cx="213" cy="90" rx="27" ry="37" transform="rotate(10 213 90)"/>
+    <!-- Lower chin / chest fluff -->
+    <ellipse cx="130" cy="157" rx="52" ry="27"/>
+    <!-- Body-head joining fluff -->
+    <ellipse cx="130" cy="172" rx="72" ry="26"/>
+    <!-- Side body bumps (fluffy texture) -->
+    <ellipse cx="40" cy="196" rx="22" ry="38"/>
+    <ellipse cx="220" cy="196" rx="22" ry="38"/>
+    <!-- Front paw left -->
+    <ellipse cx="85" cy="255" rx="31" ry="21"/>
+    <!-- Front paw right -->
+    <ellipse cx="175" cy="255" rx="31" ry="21"/>
+    <!-- Paw toe detail left -->
+    <ellipse cx="85" cy="266" rx="23" ry="13"/>
+    <!-- Paw toe detail right -->
+    <ellipse cx="175" cy="266" rx="23" ry="13"/>
+    <!-- Tiny nose highlight (cream cutout matching page bg) -->
+    <ellipse cx="130" cy="114" rx="9" ry="6" fill="#f0ebe7"/>
+  </g>
+</svg>

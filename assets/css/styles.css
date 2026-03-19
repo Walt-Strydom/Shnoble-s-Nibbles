@@ -258,27 +258,41 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: auto 1fr auto;
+  gap: 2rem;
   align-items: center;
 }
 
-.hero-content { max-width: 560px; }
+.hero-content {
+  text-align: center;
+}
 
-.hero-visual {
-  display: flex;
-  align-items: center;
+.hero-content .lead {
+  margin-inline: auto;
+}
+
+.hero-content .btn-row {
   justify-content: center;
 }
 
-/* Hero text staggered entrance */
-.hero-headline {
-  animation: slideUpFade 0.7s ease both;
-  animation-delay: 0.08s;
-  font-weight: 900;
-  color: var(--text-dark);
+/* Hero silhouettes */
+.hero-silhouette {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
+.hero-silhouette img {
+  width: clamp(130px, 13vw, 200px);
+  height: auto;
+  animation: floatIn 1s ease both;
+  filter: drop-shadow(0 8px 18px rgba(51, 51, 51, 0.10));
+}
+
+.hero-silhouette--left  img { animation-delay: 0.1s; }
+.hero-silhouette--right img { animation-delay: 0.35s; }
+
+/* Hero text staggered entrance */
 .hero-subtext {
   animation: slideUpFade 0.7s ease both;
   animation-delay: 0.28s;
@@ -289,11 +303,6 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   animation-delay: 0.48s;
 }
 
-.hero-image {
-  animation: floatIn 1s ease both;
-  animation-delay: 0.18s;
-}
-
 .btn-row {
   display: flex;
   flex-wrap: wrap;
@@ -302,57 +311,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   align-items: center;
 }
 
-/* 8. Hero SVG Dog & Animations
-   ============================================ */
-.dog-svg {
-  width: min(320px, 100%);
-  height: auto;
-  filter: drop-shadow(0 20px 40px rgba(230, 128, 0, 0.18));
-}
-
-/* Tail: rotates around its base (the translate(72,160) parent puts origin at tail base) */
-.dog-tail-svg {
-  transform-origin: 0 0;
-  animation: wagTail 0.62s ease-in-out infinite;
-}
-
-/* Eye blink */
-.dog-eye-svg {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: dogBlink 5s ease-in-out infinite;
-}
-
-/* 9. Hero Paw Walk Strip
-   ============================================ */
-.paw-walk {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 58px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.paw-print {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  color: var(--pink);
-  opacity: 0;
-  animation: pawWalk 10s linear infinite;
-}
-
-.paw-print:nth-child(odd)  { bottom: 20px; }
-.paw-print:nth-child(even) { bottom: 6px; }
-
-.paw-print:nth-child(1) { animation-delay: 0s; }
-.paw-print:nth-child(2) { animation-delay: 2s; }
-.paw-print:nth-child(3) { animation-delay: 4s; }
-.paw-print:nth-child(4) { animation-delay: 6s; }
-.paw-print:nth-child(5) { animation-delay: 8s; }
+/* 8–9. (removed: hero SVG dog, paw walk strip) */
 
 /* 10. Buttons — Brand-Distinctive System
    ============================================
@@ -449,19 +408,17 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   background: var(--text-dark);
   color: var(--off-white);
   padding: 0.85rem 0;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .trust-bar-inner {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 2.8rem;
-  animation: scrollTrust 28s linear infinite;
-  padding-right: 2.8rem;
+  justify-content: center;
+  gap: 1.4rem 2.4rem;
+  width: min(1120px, 92%);
+  margin-inline: auto;
 }
-
-.trust-bar:hover .trust-bar-inner { animation-play-state: paused; }
 
 .trust-badge {
   display: inline-flex;
@@ -1141,37 +1098,15 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-@keyframes wagTail {
-  0%, 100% { transform: rotate(-14deg); }
-  50%       { transform: rotate(20deg); }
-}
-
-@keyframes dogBlink {
-  0%, 44%, 54%, 100% { transform: scaleY(1); }
-  49%                { transform: scaleY(0.07); }
-}
-
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(-0.8deg); }
   50%       { transform: translateY(-14px) rotate(0.8deg); }
-}
-
-@keyframes pawWalk {
-  0%   { left: -40px; opacity: 0; }
-  6%   { opacity: 0.65; }
-  88%  { opacity: 0.65; }
-  100% { left: calc(100% + 40px); opacity: 0; }
 }
 
 @keyframes treatBounce {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   35%       { transform: translateY(-7px) rotate(10deg); }
   55%       { transform: translateY(-4px) rotate(-5deg); }
-}
-
-@keyframes scrollTrust {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
 }
 
 @keyframes whatsappPulse {
@@ -1188,12 +1123,36 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 /* 26. Media Queries
    ============================================ */
 @media (max-width: 900px) {
-  .hero-grid,
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  /* On tablet/mobile: text first, silhouettes side by side below */
+  .hero-content { order: 1; }
+  .hero-silhouette--left  { order: 2; }
+  .hero-silhouette--right { order: 3; }
+
+  .hero-silhouette--left,
+  .hero-silhouette--right {
+    display: inline-flex;
+  }
+
+  /* Both silhouettes on one row below the text */
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .hero-content {
+    grid-column: 1 / 3;
+  }
+
+  .hero-silhouette img {
+    width: clamp(80px, 22vw, 140px);
+  }
+
   .footer-grid { grid-template-columns: 1fr; }
-
-  .hero-visual { order: -1; }
-
-  .dog-svg { width: min(260px, 80%); }
 
   .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 
@@ -1236,8 +1195,6 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   }
 
   .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
-
-  .hero-grid { gap: 1.5rem; }
 }
 
 @media (max-width: 480px) {
