@@ -20,13 +20,25 @@
   --radius-sm:   8px;
   --shadow-soft: 0 12px 28px rgba(51, 51, 51, 0.10);
   --shadow-lift: 0 20px 44px rgba(51, 51, 51, 0.18);
+  --shadow-card: 0 2px 8px rgba(51, 51, 51, 0.06), 0 12px 28px rgba(51, 51, 51, 0.10);
+  --shadow-card-hover: 0 4px 16px rgba(51, 51, 51, 0.08), 0 24px 48px rgba(51, 51, 51, 0.16);
 }
 
 /* 2. Reset & Base
    ============================================ */
 *, *::before, *::after { box-sizing: border-box; }
 
-html, body { margin: 0; padding: 0; }
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body { margin: 0; padding: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
 body {
   font-family: 'Lato', sans-serif;
@@ -115,7 +127,18 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(51, 51, 51, 0.07);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
+
+.site-header.scrolled {
+  background: rgba(240, 235, 231, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 24px rgba(51, 51, 51, 0.12);
+  border-bottom-color: transparent;
+}
+
+.site-header.scrolled .brand-logo { height: 44px; }
 
 .nav-wrap {
   display: flex;
@@ -139,7 +162,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 }
 
 .brand-logo {
-  height: 48px;
+  height: 58px;
   width: auto;
   display: block;
 }
@@ -277,30 +300,57 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   justify-content: center;
 }
 
-/* Hero text staggered entrance */
+/* Hero eyebrow label — typographic only, no box/border */
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+  margin-top: 0;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+/* Hero text — GSAP owns entrance, no CSS animation */
 .hero-headline {
-  animation: slideUpFade 0.7s ease both;
-  animation-delay: 0.08s;
   font-weight: 900;
   color: var(--text-dark);
 }
 
 .hero-subtext {
-  animation: slideUpFade 0.7s ease both;
-  animation-delay: 0.28s;
   font-size: clamp(1.15rem, 2.2vw, 1.45rem);
   color: var(--text-dark);
   max-width: 48ch;
 }
 
-.hero-cta {
-  animation: slideUpFade 0.7s ease both;
-  animation-delay: 0.48s;
+/* Section heading with orange accent rule */
+.section-heading {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.55rem;
 }
 
-.hero-image {
-  animation: floatIn 1s ease both;
-  animation-delay: 0.18s;
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--orange);
 }
 
 .btn-row {
@@ -318,12 +368,18 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 20px 40px rgba(230, 128, 0, 0.22));
-  animation: logoFloat 5s ease-in-out infinite;
 }
 
-@keyframes logoFloat {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.045); }
+.hero-logo-centre {
+  width: min(460px, 120%);
+  height: auto;
+  display: block;
+  margin-top: -18px;
+}
+
+.hero-visual {
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Ground wave — sits at the very bottom of the hero */
@@ -557,17 +613,15 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   background: var(--surface-2);
   border-radius: var(--radius-lg);
   border-top: 3px solid var(--pink);
-  box-shadow: var(--shadow-soft);
-  padding: 1.6rem;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: var(--shadow-card);
+  padding: 1.8rem 1.6rem;
+  /* hover handled by GSAP */
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lift);
+.card.featured {
+  border-top-color: var(--orange);
+  background: linear-gradient(160deg, rgba(230,128,0,0.03) 0%, var(--surface-2) 55%);
 }
-
-.card.featured { border-top-color: var(--orange); }
 
 .card-icon {
   width: 52px;
@@ -580,17 +634,28 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   font-size: 1.6rem;
 }
 
-/* Staggered card animation via delay attrs */
-.grid.cards [data-animate-delay="1"] { transition-delay: 0.1s; }
-.grid.cards [data-animate-delay="2"] { transition-delay: 0.2s; }
-.grid.cards [data-animate-delay="3"] { transition-delay: 0.3s; }
-.grid.cards [data-animate-delay="4"] { transition-delay: 0.4s; }
+/* Card stagger handled by GSAP ScrollTrigger */
 
 /* 13. Stats Section
    ============================================ */
 .stats-section {
   background: var(--text-dark);
   color: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230, 128, 0, 0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .stats-grid {
@@ -626,16 +691,12 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 .testimonial-card {
   background: var(--surface-2);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-card);
   padding: 2rem 1.8rem 1.6rem;
+  border-left: 3px solid var(--pink);
   position: relative;
   overflow: hidden;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lift);
+  /* hover handled by GSAP */
 }
 
 .testimonial-quote-mark {
@@ -834,6 +895,13 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   margin-bottom: 2.5rem;
 }
 
+.footer-logo {
+  height: 52px;
+  width: auto;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
 .footer-brand-name {
   font-family: 'Nunito', sans-serif;
   font-weight: 900;
@@ -1026,6 +1094,25 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
    ============================================ */
 .story-flow > * + * { margin-top: 1.2rem; }
 
+/* Pull quote — highlighted story excerpt */
+.pull-quote {
+  border-left: 4px solid var(--orange);
+  padding: 1.4rem 1.8rem;
+  margin: 2rem 0;
+  background: rgba(230, 128, 0, 0.06);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.pull-quote p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.42;
+  margin: 0;
+  font-style: italic;
+}
+
 .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1038,13 +1125,8 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   padding: 1.8rem 1.2rem;
   background: var(--surface-2);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lift);
+  box-shadow: var(--shadow-card);
+  /* hover handled by GSAP */
 }
 
 .value-icon {
@@ -1063,20 +1145,15 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   border-radius: var(--radius-lg);
   padding: 1.8rem;
   border-top: 4px solid var(--orange);
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.ingredient-card:hover {
-  transform: translateY(-7px);
-  box-shadow: var(--shadow-lift);
+  box-shadow: var(--shadow-card);
+  /* hover handled by GSAP */
 }
 
 .ingredient-card-icon {
   width: 56px;
   height: 56px;
   background: var(--off-white);
-  border-radius: 50%;
+  border-radius: 12px;
   display: grid;
   place-items: center;
   font-size: 1.9rem;
@@ -1109,6 +1186,19 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   flex-shrink: 0;
 }
 
+/* Tip number — large decorative numeral inside tip cards */
+.tip-number {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--orange);
+  opacity: 0.22;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.04em;
+}
+
 /* 22. Dog Health Page
    ============================================ */
 .tip-card {
@@ -1116,13 +1206,8 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   border-radius: var(--radius-lg);
   padding: 1.6rem;
   border-left: 4px solid var(--orange);
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.tip-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lift);
+  box-shadow: var(--shadow-card);
+  /* hover handled by GSAP */
 }
 
 /* 23. Contact & Stockists
@@ -1144,34 +1229,20 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 .contact-block h3 { margin-bottom: 1rem; }
 
 /* 24. Scroll-Triggered Animations
-   ============================================ */
-[data-animate] {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+   ============================================
+   Handled by GSAP ScrollTrigger in main.js.
+   Reduced motion fallback only:                */
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow, .hero-headline, .hero-subtext,
+  .hero-cta, .hero-image {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
-
-[data-animate].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-[data-animate-delay="1"] { transition-delay: 0.1s; }
-[data-animate-delay="2"] { transition-delay: 0.2s; }
-[data-animate-delay="3"] { transition-delay: 0.3s; }
-[data-animate-delay="4"] { transition-delay: 0.4s; }
 
 /* 25. Keyframe Animations
    ============================================ */
-@keyframes slideUpFade {
-  from { opacity: 0; transform: translateY(32px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes floatIn {
-  from { opacity: 0; transform: scale(0.91) translateY(22px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
-}
+/* slideUpFade and floatIn removed — GSAP owns hero entrance */
 
 @keyframes wagTail {
   0%, 100% { transform: rotate(-14deg); }

@@ -1,48 +1,26 @@
 /* ============================================
-   Shnoble's Nibbles — main.js
+   Shnoble's Nibbles — main.js (GSAP Edition)
    ============================================ */
 
-/* ── 1. Scroll-triggered Animations ────────── */
-const animObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      animObserver.unobserve(entry.target); // fire once only
-    }
-  });
-}, { threshold: 0.14 });
-
-document.querySelectorAll('[data-animate]').forEach((el) => animObserver.observe(el));
+/* ── 1. Plugin Registration ─────────────────── */
+gsap.registerPlugin(ScrollTrigger);
 
 
-/* ── 2. Animated Stats Counters ─────────────── */
-function animateCounter(el) {
-  const target  = parseInt(el.dataset.target, 10);
-  const suffix  = el.dataset.suffix || '';
-  let   count   = 0;
-  const step    = Math.max(1, Math.ceil(target / 60));
+/* ── 2. Reduced Motion Guard ────────────────── */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const timer = setInterval(() => {
-    count = Math.min(count + step, target);
-    el.textContent = count + suffix;
-    if (count >= target) clearInterval(timer);
-  }, 20);
+
+/* ── 3. Header Scroll State ─────────────────── */
+const header = document.querySelector('.site-header');
+
+if (header) {
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
 }
 
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.stat-number[data-target]').forEach(animateCounter);
-      statsObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
 
-const statsSection = document.querySelector('.stats-section');
-if (statsSection) statsObserver.observe(statsSection);
-
-
-/* ── 3. Mobile Navigation Toggle ────────────── */
+/* ── 4. Mobile Navigation Toggle ────────────── */
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav   = document.querySelector('.site-nav');
 
@@ -53,7 +31,6 @@ if (navToggle && siteNav) {
     navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Close nav when a link is clicked (mobile UX)
   siteNav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       siteNav.classList.remove('open');
@@ -62,7 +39,6 @@ if (navToggle && siteNav) {
     });
   });
 
-  // Close nav on outside click
   document.addEventListener('click', (e) => {
     if (!navToggle.contains(e.target) && !siteNav.contains(e.target)) {
       siteNav.classList.remove('open');
@@ -73,9 +49,211 @@ if (navToggle && siteNav) {
 }
 
 
-/* ── 4. Paw Print Cursor Trail (desktop easter egg) ── */
+/* ── All GSAP Animations (skipped if reduced motion) ── */
+if (!prefersReducedMotion) {
+
+  /* ── 5. Hero Entrance Timeline ─────────────── */
+  const heroHeadline = document.querySelector('.hero-headline');
+
+  if (heroHeadline) {
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    heroTl
+      .from('.hero-eyebrow',  { opacity: 0, y: 18, duration: 0.55, delay: 0.15 })
+      .from('.hero-headline', { opacity: 0, y: 42, duration: 0.75 }, '-=0.25')
+      .from('.hero-subtext',  { opacity: 0, y: 30, duration: 0.65 }, '-=0.42')
+      .from('.hero-cta',      { opacity: 0, y: 20, duration: 0.55 }, '-=0.38')
+      .from('.hero-image',    {
+        opacity: 0,
+        scale: 0.91,
+        y: 28,
+        duration: 1.0,
+        ease: 'power2.out'
+      }, '-=0.72');
+  }
+
+
+  /* ── 6. Hero Parallax — Silhouettes ──────────── */
+  const sil1 = document.querySelector('.hero-sil-1');
+  const sil2 = document.querySelector('.hero-sil-2');
+
+  if (sil1 && sil2) {
+    gsap.to(sil1, {
+      yPercent: 28,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.5
+      }
+    });
+
+    gsap.to(sil2, {
+      yPercent: 18,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.5
+      }
+    });
+  }
+
+
+  /* ── 7. ScrollTrigger: Headings ─────────────── */
+  // Covers: h1 with data-animate (inner pages) + all .section-heading h2s
+  gsap.utils.toArray('h1[data-animate], h2.section-heading').forEach((heading) => {
+    gsap.from(heading, {
+      opacity: 0,
+      y: 32,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: heading,
+        start: 'top 88%',
+        once: true
+      }
+    });
+  });
+
+
+  /* ── 8. ScrollTrigger: [data-animate] Elements ── */
+  // Skips headings, grid children, and stats items — each handled by their own handler below
+  gsap.utils.toArray('[data-animate]').forEach((el) => {
+    // Headings → handled by handler 7
+    if (el.tagName === 'H1' || el.tagName === 'H2') return;
+    // Cards inside grids → handled by handler 9
+    if (el.closest('.grid') || el.closest('.values-grid')) return;
+    // Stat items → handled by handler 10
+    if (el.closest('.stats-section')) return;
+
+    gsap.from(el, {
+      opacity: 0,
+      y: 26,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 90%',
+        once: true
+      }
+    });
+  });
+
+
+  /* ── 9. ScrollTrigger: Card Grids with Stagger ── */
+  // Covers .grid (homepage, ingredients, dog-health) and .values-grid (about)
+  document.querySelectorAll('.grid, .values-grid').forEach((grid) => {
+    const cards = grid.querySelectorAll(
+      '.card, .testimonial-card, .value-card, .ingredient-card, .tip-card'
+    );
+
+    if (cards.length === 0) return;
+
+    gsap.from(cards, {
+      opacity: 0,
+      y: 48,
+      duration: 0.7,
+      ease: 'power2.out',
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: grid,
+        start: 'top 85%',
+        once: true
+      }
+    });
+  });
+
+
+  /* ── 10. GSAP Stats Counter ──────────────────── */
+  const statsSection = document.querySelector('.stats-section');
+
+  if (statsSection) {
+    ScrollTrigger.create({
+      trigger: statsSection,
+      start: 'top 78%',
+      once: true,
+      onEnter: () => {
+        // Stagger stat items in
+        gsap.from(statsSection.querySelectorAll('.stat-item'), {
+          opacity: 0,
+          y: 40,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power2.out'
+        });
+
+        // Count-up numbers
+        statsSection.querySelectorAll('.stat-number[data-target]').forEach((el) => {
+          const target = parseInt(el.dataset.target, 10);
+          const suffix = el.dataset.suffix || '';
+          const obj    = { val: 0 };
+
+          gsap.to(obj, {
+            val: target,
+            duration: 1.8,
+            ease: 'power2.out',
+            onUpdate: () => {
+              el.textContent = Math.round(obj.val) + suffix;
+            }
+          });
+        });
+      }
+    });
+  }
+
+
+  /* ── 11. GSAP Card Hover Effects ─────────────── */
+  document.querySelectorAll(
+    '.card, .testimonial-card, .value-card, .ingredient-card, .tip-card, .product-focus'
+  ).forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, {
+        y: -10,
+        boxShadow: 'var(--shadow-card-hover)',
+        duration: 0.3,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        y: 0,
+        boxShadow: 'var(--shadow-card)',
+        duration: 0.4,
+        ease: 'power2.inOut',
+        overwrite: 'auto'
+      });
+    });
+  });
+
+
+  /* ── 12. CTA Banner Entrance ─────────────────── */
+  const ctaBanner = document.querySelector('.cta-banner');
+
+  if (ctaBanner) {
+    gsap.from(ctaBanner.querySelectorAll('h2, p, .btn'), {
+      opacity: 0,
+      y: 30,
+      duration: 0.7,
+      ease: 'power2.out',
+      stagger: 0.14,
+      scrollTrigger: {
+        trigger: ctaBanner,
+        start: 'top 80%',
+        once: true
+      }
+    });
+  }
+
+} // end prefersReducedMotion guard
+
+
+/* ── 13. Paw Print Cursor Trail (desktop easter egg) ── */
 (function initPawTrail() {
-  // Only on devices with a fine pointer (mouse), not touch
   if (!window.matchMedia('(pointer: fine)').matches) return;
 
   const PAW_SVG = `<svg viewBox="0 0 40 44" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
@@ -87,7 +265,7 @@ if (navToggle && siteNav) {
   </svg>`;
 
   let lastX = 0, lastY = 0, moveCount = 0;
-  const MAX_PAWS = 8;
+  const MAX_PAWS  = 8;
   const activePaws = [];
 
   function spawnPaw(x, y) {
@@ -114,7 +292,6 @@ if (navToggle && siteNav) {
     document.body.appendChild(paw);
     activePaws.push(paw);
 
-    // Fade out after short delay
     setTimeout(() => { paw.style.opacity = '0'; }, 300);
     setTimeout(() => {
       paw.remove();
@@ -124,15 +301,14 @@ if (navToggle && siteNav) {
   }
 
   document.addEventListener('mousemove', (e) => {
-    const dx = e.clientX - lastX;
-    const dy = e.clientY - lastY;
+    const dx   = e.clientX - lastX;
+    const dy   = e.clientY - lastY;
     const dist = Math.sqrt(dx * dx + dy * dy);
 
-    if (dist > 48) { // only spawn every ~48px of movement
+    if (dist > 48) {
       moveCount++;
       lastX = e.clientX;
       lastY = e.clientY;
-      // Alternate left/right paw offset for a walking pattern
       const offset = (moveCount % 2 === 0) ? 10 : -10;
       const angle  = Math.atan2(dy, dx);
       const perpX  = Math.cos(angle + Math.PI / 2) * offset;
