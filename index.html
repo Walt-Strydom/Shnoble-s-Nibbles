@@ -38,7 +38,7 @@
   <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="index.html"><span class="brand-dot" aria-hidden="true"></span>Shnoble's Nibbles</a>
+      <a class="brand" href="index.html"><img src="assets/img/Logo Centre.png" alt="Shnoble's Nibbles" class="brand-logo"></a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -64,7 +64,6 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
-          <h1 class="hero-headline">Healthy treats<br/>that make tails wag.</h1>
           <p class="lead hero-subtext">Shnoble's Nibbles crafts joyful, wholesome dog snacks — three simple ingredients, zero nasties, made right here in South Africa.</p>
           <div class="btn-row hero-cta">
             <a class="btn primary" href="products.html">Shop Treats</a>
@@ -72,192 +71,25 @@
           </div>
         </div>
 
-        <!-- Animated SVG Dog -->
-        <div class="hero-visual hero-image" aria-hidden="true">
-          <svg class="dog-svg" viewBox="0 0 220 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Happy cartoon dog with wagging tail">
-
-            <!-- TAIL — nested g trick: outer g places origin at tail base,
-                 inner .dog-tail-svg rotates around that point -->
-            <g transform="translate(58, 155)">
-              <g class="dog-tail-svg">
-                <path d="M0 0 Q-36 -26 -32 -62 Q-29 -84 -14 -88"
-                      stroke="#c76a00" stroke-width="16" stroke-linecap="round" fill="none"/>
-                <circle cx="-14" cy="-94" r="11" fill="#e68000"/>
-              </g>
-            </g>
-
-            <!-- Body -->
-            <ellipse cx="124" cy="176" rx="70" ry="52" fill="#e68000"/>
-
-            <!-- Back haunch (adds depth) -->
-            <ellipse cx="72" cy="160" rx="34" ry="28" fill="#d07518"/>
-
-            <!-- Neck -->
-            <ellipse cx="148" cy="134" rx="27" ry="20" fill="#e68000"/>
-
-            <!-- Head -->
-            <circle cx="160" cy="98" r="48" fill="#f0a020"/>
-
-            <!-- Floppy left ear -->
-            <path d="M124 70 C104 50 102 74 110 98 C115 113 130 110 135 90 Z" fill="#c76a00"/>
-
-            <!-- Right ear (peeking behind head) -->
-            <ellipse cx="191" cy="64" rx="14" ry="19" fill="#c76a00" transform="rotate(18 191 64)"/>
-
-            <!-- Muzzle / snout area -->
-            <ellipse cx="185" cy="113" rx="25" ry="18" fill="#f5c060"/>
-
-            <!-- Nose -->
-            <ellipse cx="193" cy="107" rx="9" ry="7" fill="#2a2a2a"/>
-            <!-- Nose highlight -->
-            <ellipse cx="190" cy="105" rx="3" ry="2" fill="rgba(255,255,255,0.28)"/>
-
-            <!-- Eye (group translated so blink scaleY works at center) -->
-            <g transform="translate(170, 84)">
-              <g class="dog-eye-svg">
-                <circle cx="0" cy="0" r="10" fill="#2a2a2a"/>
-                <circle cx="-3.5" cy="-3" r="3" fill="#ffffff"/>
-                <circle cx="4"   cy="-4" r="1.5" fill="rgba(255,255,255,0.55)"/>
-              </g>
-            </g>
-
-            <!-- Expressive eyebrow -->
-            <path d="M158 70 Q170 64 182 70"
-                  stroke="#c76a00" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-
-            <!-- Smile -->
-            <path d="M175 122 Q183 129 191 122"
-                  stroke="#c76a00" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-
-            <!-- Tongue -->
-            <ellipse cx="183" cy="133" rx="7" ry="9" fill="#e4babf"/>
-            <line x1="183" y1="122" x2="183" y2="133"
-                  stroke="#d4a0aa" stroke-width="1.5" stroke-linecap="round"/>
-
-            <!-- Front left paw -->
-            <ellipse cx="96" cy="224" rx="21" ry="13" fill="#c76a00"/>
-            <circle cx="88"  cy="220" r="4" fill="#b05e00" opacity="0.45"/>
-            <circle cx="97"  cy="218" r="4" fill="#b05e00" opacity="0.45"/>
-            <circle cx="106" cy="220" r="4" fill="#b05e00" opacity="0.45"/>
-
-            <!-- Front right paw -->
-            <ellipse cx="148" cy="228" rx="21" ry="13" fill="#c76a00"/>
-            <circle cx="140" cy="224" r="4" fill="#b05e00" opacity="0.45"/>
-            <circle cx="149" cy="222" r="4" fill="#b05e00" opacity="0.45"/>
-            <circle cx="158" cy="224" r="4" fill="#b05e00" opacity="0.45"/>
-
-          </svg>
+        <!-- Logo Image -->
+        <div class="hero-visual hero-image">
+          <img src="assets/img/Logo Image.png" alt="Shnoble's Nibbles" class="hero-logo-img">
         </div>
       </div>
 
-      <!-- Walking paw prints strip -->
-      <div class="paw-walk" aria-hidden="true">
-        <span class="paw-print">
-          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
-          </svg>
-        </span>
-        <span class="paw-print">
-          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
-          </svg>
-        </span>
-        <span class="paw-print">
-          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
-          </svg>
-        </span>
-        <span class="paw-print">
-          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
-          </svg>
-        </span>
-        <span class="paw-print">
-          <svg viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
-          </svg>
-        </span>
+      <!-- Ground wave for silhouettes to stand on -->
+      <div class="hero-ground" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 72" preserveAspectRatio="none">
+          <path d="M0,36 C200,72 400,0 720,36 C1040,72 1240,0 1440,36 L1440,72 L0,72 Z" fill="#e4babf"/>
+        </svg>
+      </div>
+
+      <!-- Dog silhouettes -->
+      <div class="hero-sils" aria-hidden="true">
+        <img src="assets/img/Sil 1.png" class="hero-sil hero-sil-1" alt="">
+        <img src="assets/img/Sil 2.png" class="hero-sil hero-sil-2" alt="">
       </div>
     </section>
-
-    <!-- ===== TRUST BAR ===== -->
-    <div class="trust-bar" role="region" aria-label="Brand guarantees">
-      <!-- Inner strip is duplicated for seamless infinite scroll -->
-      <div class="trust-bar-inner" aria-hidden="true">
-        <!-- Set 1 -->
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-1" viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
-          </svg>
-          <span>100% Natural</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-          <span>No Artificial Additives</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-          <span>Made with Love in SA</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <span>Locally Sourced Ingredients</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-          <span>Freeze-Dried Fresh</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-        <!-- Set 2 (duplicate for seamless scroll) -->
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-1" viewBox="0 0 40 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <ellipse cx="20" cy="33" rx="13" ry="10"/><ellipse cx="7" cy="19" rx="5.5" ry="6.5" transform="rotate(-15 7 19)"/><ellipse cx="15" cy="12" rx="5.5" ry="6.5"/><ellipse cx="25" cy="12" rx="5.5" ry="6.5"/><ellipse cx="33" cy="19" rx="5.5" ry="6.5" transform="rotate(15 33 19)"/>
-          </svg>
-          <span>100% Natural</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-          <span>No Artificial Additives</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-          <span>Made with Love in SA</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <span>Locally Sourced Ingredients</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-        <div class="trust-badge">
-          <svg class="trust-icon bounce-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-          <span>Freeze-Dried Fresh</span>
-        </div>
-        <span class="trust-dot" aria-hidden="true"></span>
-      </div>
-    </div>
 
     <!-- ===== WHO WE ARE ===== -->
     <section class="section">
@@ -445,7 +277,7 @@
   <a class="whatsapp-float"
      href="https://wa.me/+27665580274?text=Hi%20Shnoble's%20Nibbles!%20I'd%20like%20to%20find%20out%20more%20about%20your%20treats%20%F0%9F%90%BE"
      target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-    <span class="whatsapp-tooltip">Chat with us!</span>
+    <span class="whatsapp-tooltip">WhatsApp Us</span>
     <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
       <path fill="currentColor" d="M19.11 17.48c-.27-.14-1.58-.78-1.82-.87-.24-.09-.41-.14-.58.14-.17.27-.67.87-.82 1.05-.15.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.82-.15-.27-.02-.41.12-.55.12-.12.27-.31.41-.46.14-.15.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.46.07-.7.34-.24.27-.92.9-.92 2.2s.94 2.55 1.07 2.73c.14.18 1.84 2.81 4.46 3.94.62.27 1.11.43 1.49.55.63.2 1.2.17 1.66.11.51-.08 1.58-.65 1.8-1.29.22-.63.22-1.18.15-1.29-.06-.1-.24-.17-.51-.31z"/>
       <path fill="currentColor" d="M16 3.2C9.04 3.2 3.4 8.84 3.4 15.8c0 2.45.7 4.79 2.02 6.81L3.1 28.8l6.36-2.27a12.53 12.53 0 0 0 6.54 1.83c6.96 0 12.6-5.64 12.6-12.6S22.96 3.2 16 3.2zm0 22.92c-2.01 0-3.97-.54-5.67-1.56l-.41-.24-3.77 1.35 1.37-3.68-.27-.43a10.28 10.28 0 1 1 8.75 4.56z"/>

@@ -138,6 +138,12 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   flex-shrink: 0;
 }
 
+.brand-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
 .brand-dot {
   width: 11px;
   height: 11px;
@@ -227,7 +233,7 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 .hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(4rem, 9vw, 7rem) 0 clamp(4rem, 7vw, 6rem);
+  padding: clamp(4rem, 9vw, 7rem) 0 clamp(8rem, 16vw, 12rem);
   background: var(--off-white);
 }
 
@@ -282,6 +288,9 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 .hero-subtext {
   animation: slideUpFade 0.7s ease both;
   animation-delay: 0.28s;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  color: var(--text-dark);
+  max-width: 48ch;
 }
 
 .hero-cta {
@@ -302,12 +311,59 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   align-items: center;
 }
 
-/* 8. Hero SVG Dog & Animations
+/* 8. Hero Logo Image & Silhouettes
    ============================================ */
-.dog-svg {
-  width: min(320px, 100%);
+.hero-logo-img {
+  width: min(340px, 100%);
   height: auto;
-  filter: drop-shadow(0 20px 40px rgba(230, 128, 0, 0.18));
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(230, 128, 0, 0.22));
+  animation: logoFloat 5s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.045); }
+}
+
+/* Ground wave — sits at the very bottom of the hero */
+.hero-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 1;
+}
+
+.hero-ground svg {
+  display: block;
+  width: 100%;
+  height: clamp(44px, 8vw, 80px);
+}
+
+/* Silhouettes sit at the bottom of the hero, one each side */
+.hero-sils {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 2;
+  padding: 0 2vw;
+}
+
+.hero-sil {
+  height: clamp(80px, 14vw, 160px);
+  width: auto;
+  object-fit: contain;
+}
+
+.hero-sil-2 {
+  transform: scaleX(-1); /* mirror so both face inward */
 }
 
 /* Tail: rotates around its base (the translate(72,160) parent puts origin at tail base) */
@@ -728,56 +784,32 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   background: #25d366;
   color: #fff;
   border-radius: 50%;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.38);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-/* Pulse ring */
-.whatsapp-float::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: rgba(37, 211, 102, 0.45);
-  animation: whatsappPulse 2.2s ease-out infinite;
-  pointer-events: none;
-}
-
-/* Tooltip */
+/* Message bubble — always visible */
 .whatsapp-tooltip {
   position: absolute;
   right: 70px;
-  background: var(--text-dark);
-  color: #fff;
-  padding: 5px 12px;
-  border-radius: 8px;
+  background: #fff;
+  color: var(--text-dark);
+  padding: 7px 14px;
+  border-radius: 16px 16px 0 16px;
   font-family: 'Lato', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
+  font-weight: 700;
   white-space: nowrap;
-  opacity: 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
   pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-.whatsapp-tooltip::after {
-  content: '';
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 6px solid transparent;
-  border-left-color: var(--text-dark);
-  border-right: none;
 }
 
 .whatsapp-float:hover,
 .whatsapp-float:focus-visible {
   color: #fff;
-  transform: scale(1.1);
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
 }
-
-.whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
 
 .whatsapp-float svg {
   width: 30px;
