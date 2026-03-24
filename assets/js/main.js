@@ -146,9 +146,7 @@ if (!prefersReducedMotion) {
   /* ── 9. ScrollTrigger: Card Grids with Stagger ── */
   // Covers .grid (homepage, ingredients, dog-health) and .values-grid (about)
   document.querySelectorAll('.grid, .values-grid').forEach((grid) => {
-    const cards = grid.querySelectorAll(
-      '.card, .testimonial-card, .value-card, .ingredient-card, .tip-card'
-    );
+    const cards = grid.querySelectorAll('.card');
 
     if (cards.length === 0) return;
 
@@ -206,9 +204,7 @@ if (!prefersReducedMotion) {
 
 
   /* ── 11. GSAP Card Hover Effects ─────────────── */
-  document.querySelectorAll(
-    '.card, .testimonial-card, .value-card, .ingredient-card, .tip-card, .product-focus'
-  ).forEach((card) => {
+  document.querySelectorAll('.card').forEach((card) => {
     card.addEventListener('mouseenter', () => {
       gsap.to(card, {
         y: -10,
